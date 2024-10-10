@@ -3,42 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小明杂货铺 | 收集那些有用无用的东西</title>
+    <title>导航网页</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            display: flex;
+            background-color: #ffffff; /* 设置整个页面的背景色为白色 */
         }
-        header {
-            background-color: #007bff;
+        .sidebar {
+            width: 200px;
+            height: 100vh; /* 使左侧导航栏高度为100%视口高度 */
+            background-color: #007bff; /* 蓝色背景 */
             color: white;
             padding: 20px;
-            text-align: center;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            position: fixed; /* 固定左侧导航栏 */
         }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #4CAF50;
+        .sidebar h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            display: block;
             padding: 10px;
-        }
-        nav a {
-            margin: 0 15px;
-            color: white;
+            color: white; /* 链接文字颜色 */
             text-decoration: none;
-            padding: 8px 16px;
+            margin-bottom: 10px;
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-        nav a:hover {
-            background-color: #45a049;
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* 悬停效果 */
+        }
+        .main {
+            flex-grow: 1;
+            padding: 20px;
+            margin-left: 220px; /* 留出导航栏的空间 */
+            background-color: #ffffff; /* 纯白背景 */
+        }
+        .main h1 {
+            text-align: center; /* 标题居中 */
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-input {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 20px;
         }
         .item {
             background-color: white;
@@ -46,70 +68,74 @@
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            width: 200px;
+            width: 150px;
             text-align: center;
         }
         .item img {
             max-width: 100%;
             border-radius: 5px;
         }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #007bff;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        .item a {
+            color: black; /* 描述信息的文字颜色 */
+            text-decoration: none; /* 去掉链接下划线 */
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>爱达杂货铺</h1>
-    <p>收集那些有用的东西</p>
-</header>
-
-<nav>
+<div class="sidebar">
+    <h2>导航菜单</h2>
     <a href="#">首页</a>
-    <a href="#">酷站推荐</a>
-    <a href="#">常用站点</a>
-    <a href="#">资源搜索</a>
-    <a href="#">关于本站</a>
-</nav>
-
-<div class="container">
-    <div class="item">
-        <img src="https://pic3.zhimg.com/100/v2-95e7754d84a5ab0fa1da8ace264042b6_r.jpg" alt="酷站推荐">
-        <h2><a href="#">555电影</a></h2>
-        <p>最新热门电影推荐</p>
-    </div>
-    <div class="item">
-        <img src="https://github.com/AADDSS123/AADDSS123.github.io/blob/main/01.jpg?raw=true" alt="在线音乐">
-        <h2><a href="#">在线音乐</a></h2>
-        <p>无损音乐在线听</p>
-    </div>
-    <div class="item">
-        <img src="https://via.placeholder.com/150" alt="阅读小说">
-        <h2><a href="#">阅读小说</a></h2>
-        <p>免费在线小说阅读</p>
-    </div>
-    <div class="item">
-        <img src="https://via.placeholder.com/150" alt="网盘搜索">
-        <h2><a href="#">网盘搜索</a></h2>
-        <p>各大网盘资源搜索</p>
-    </div>
-    <div class="item">
-        <img src="https://via.placeholder.com/150" alt="AI工具">
-        <h2><a href="#">AI工具</a></h2>
-        <p>实用的AI在线工具</p>
-    </div>
+    <a href="#">热门网站</a>
+    <a href="#">工具网站</a>
+    <a href="#">学习资源</a>
+    <a href="#">其他链接</a>
 </div>
 
-<footer>
-    <p>版权所有 &copy; 2024 小明杂货铺</p>
-</footer>
+<div class="main">
+    <h1>我的导航网页</h1>
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="搜索网站...">
+    </div>
+
+    <div class="container">
+        <div class="item">
+            <a href="https://example.com/1" target="_blank">
+                <img src="https://via.placeholder.com/100" alt="站点1">
+                <h2>站点1</h2>
+                <p>描述信息1</p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="https://example.com/2" target="_blank">
+                <img src="https://via.placeholder.com/100" alt="站点2">
+                <h2>站点2</h2>
+                <p>描述信息2</p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="https://example.com/3" target="_blank">
+                <img src="https://via.placeholder.com/100" alt="站点3">
+                <h2>站点3</h2>
+                <p>描述信息3</p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="https://example.com/4" target="_blank">
+                <img src="https://via.placeholder.com/100" alt="站点4">
+                <h2>站点4</h2>
+                <p>描述信息4</p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="https://example.com/5" target="_blank">
+                <img src="https://via.placeholder.com/100" alt="站点5">
+                <h2>站点5</h2>
+                <p>描述信息5</p>
+            </a>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
